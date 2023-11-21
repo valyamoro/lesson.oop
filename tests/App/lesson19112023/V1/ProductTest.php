@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\lesson19112023\V1;
 
