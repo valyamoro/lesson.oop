@@ -20,9 +20,9 @@ class BookProduct extends Product
         return $this->author;
     }
 
-    public function getBookInformation(): string
+    public function getInformation(): string
     {
-        return parent::getInformation() . ' ' . $this->author;
+        return parent::getInformation() . ' ' . $this->getAuthor();
     }
 
 }

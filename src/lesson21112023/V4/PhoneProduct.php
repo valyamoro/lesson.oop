@@ -22,7 +22,7 @@ class PhoneProduct extends Product
 
     public function getInformation(): string
     {
-        return parent::getInformation() . ' ' . $this->producer;
+        return parent::getInformation() . ' ' . $this->getProducer();
     }
 
 }

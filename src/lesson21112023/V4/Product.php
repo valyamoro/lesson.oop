@@ -34,7 +34,7 @@ abstract class Product
 
     public function getInformation(): string
     {
-        return $this->id . ' ' . $this->title . ' ' . $this->quantity . ' ' . $this->price;
+        return $this->getId() . ' ' . $this->getTitle() . ' ' . $this->getQuantity() . ' ' . $this->getPrice();
     }
 
 }

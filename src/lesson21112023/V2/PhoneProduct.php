@@ -20,9 +20,9 @@ class PhoneProduct extends Product
         return $this->producer;
     }
 
-    public function getPhoneInformation(): string
+    public function getInformation(): string
     {
-        return parent::getInformation() . ' ' . $this->producer;
+        return parent::getInformation() . ' ' . $this->getProducer();
     }
 
 }

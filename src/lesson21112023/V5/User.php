@@ -10,7 +10,8 @@ abstract class User
         private string $lastName,
         private string $birthDay,
         private string $email,
-        private int $isBanned,
+        private string $address,
+        private bool $isBanned,
     ) {}
 
     public function getFirstName(): string
@@ -33,9 +34,14 @@ abstract class User
         return $this->email;
     }
 
-    public function getIsBanned(): int
+    public function getIsBanned(): bool
     {
         return $this->isBanned;
+    }
+
+    public function getAddress(): string
+    {
+        return $this->address;
     }
 
 }

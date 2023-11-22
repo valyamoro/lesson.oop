@@ -10,10 +10,11 @@ class Customer extends User
         string $lastName,
         string $birthDay,
         string $email,
-        int $isBanned,
+        string $address,
+        bool $isBanned,
         private int $status,
     ) {
-        parent::__construct($firstName, $lastName, $birthDay, $email, $isBanned);
+        parent::__construct($firstName, $lastName, $birthDay, $email, $address, $isBanned);
     }
 
     public function getStatus(): int

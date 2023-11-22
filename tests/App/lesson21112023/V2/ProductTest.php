@@ -57,7 +57,7 @@ class ProductTest extends TestCase
         $product = new BookProduct((int)$data['id'], $data['title'], (int)$data['quantity'], (int)$data['price'],
             $data['author']);
 
-        $this->assertSame('1 Learning PHP 30 500 kutlumbek', $product->getBookInformation());
+        $this->assertSame('1 Learning PHP 30 500 kutlumbek', $product->getInformation());
     }
 
     public function testGetPhoneInformation(): void
@@ -69,10 +69,9 @@ class ProductTest extends TestCase
             'price' => '1500',
             'producer' => 'NOKIA'
         ];
-        $product = new PhoneProduct((int)$data['id'], $data['title'], (int)$data['quantity'],
-            (int)$data['price'], $data['producer']);
+        $product = new PhoneProduct((int)$data['id'], $data['title'], (int)$data['quantity'], (int)$data['price'], $data['producer']);
 
-        $this->assertSame('2 NOKIA 404 50 1500 NOKIA', $product->getPhoneInformation());
+        $this->assertSame('2 NOKIA 404 50 1500 NOKIA', $product->getInformation());
     }
 
 }

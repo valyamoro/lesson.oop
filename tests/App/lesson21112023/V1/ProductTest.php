@@ -54,7 +54,7 @@ class ProductTest extends TestCase
         ];
         $product = new Product((int)$data['id'], $data['title'], (int)$data['quantity'], (int)$data['price'], $data['producer'], null);
 
-        $this->assertSame('1 nokia 404 2 100 NOKIA', $product->getPhoneInformation());
+        $this->assertSame('1 nokia 404 2 100 NOKIA', $product->getInformation());
     }
 
     public function testGetBookInformation(): void
@@ -68,7 +68,7 @@ class ProductTest extends TestCase
         ];
         $product = new Product((int)$data['id'], $data['title'], (int)$data['quantity'], (int)$data['price'], null, $data['author']);
 
-        $this->assertSame('2 Learning PHP 10 30 Ivan', $product->getBookInformation());
+        $this->assertSame('2 Learning PHP 10 30 Ivan', $product->getInformation());
     }
 
 }

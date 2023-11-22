@@ -78,7 +78,7 @@ class ProductTest extends TestCase
         ];
         $product = Product::createNewProduct($data);
 
-        $this->assertSame('2 Learning PHP 10 30 Ivan', $product->getBookInformation());
+        $this->assertSame('2 Learning PHP 10 30 Ivan', $product->getInformation());
     }
 
     public function testGetPhoneInformation(): void
@@ -93,7 +93,7 @@ class ProductTest extends TestCase
         ];
         $product = Product::createNewProduct($data);
 
-        $this->assertSame('1 Samsung M12 42 12000 Samsung', $product->getPhoneInformation());
+        $this->assertSame('1 Samsung M12 42 12000 Samsung', $product->getInformation());
     }
 
 }

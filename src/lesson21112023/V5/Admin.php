@@ -10,21 +10,16 @@ class Admin extends User
         string $lastName,
         string $birthDay,
         string $email,
-        int $isBanned,
+        string $address,
+        bool $isBanned,
         private int $role,
-        private string $address,
     ) {
-        parent::__construct($firstName, $lastName, $birthDay, $email, $isBanned);
+        parent::__construct($firstName, $lastName, $birthDay, $email, $address, $isBanned);
     }
 
     public function getRole(): int
     {
         return $this->role;
-    }
-
-    public function getAddress(): string
-    {
-        return $this->address;
     }
 
 }
