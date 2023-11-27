@@ -34,14 +34,14 @@ abstract class User
         return $this->email;
     }
 
-    public function getIsBanned(): bool
-    {
-        return $this->isBanned;
-    }
-
     public function getAddress(): string
     {
         return $this->address;
+    }
+
+    public function getIsBanned(): bool
+    {
+        return $this->isBanned;
     }
 
 }
