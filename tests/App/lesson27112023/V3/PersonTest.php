@@ -9,17 +9,18 @@ class PersonTest extends TestCase
 {
     public function testCanCreatePerson(): void
     {
-        $name = 'Ivяццan';
-        $surname = 'Vaovan';
-        $patronymic = 'Popovicewwh';
+        $name = 'Ivan';
+        $surname = 'Popova';
+        $patronymic = 'Ivanovich';
         $filename = __DIR__ . '/../../../../files/users.txt';
 
-        $createPerson = new CreatePerson($name, $surname, $patronymic, $filename);
-        $person = new PersonStorage($createPerson->getNumber(), $name, $surname, $patronymic, $filename);
+        $person = new Person($name, $surname, $patronymic);
+        $storage = new FileStorage($person, $filename);
 
-        $this->assertFileExists($filename);
-        $this->assertEquals($person->getString(), \trim($createPerson->getString()));
-        $this->assertEquals('1', $person->getNumber());
+        $result = $storage->readPerson();
+
+        $this->assertInstanceOf(Person::class, $result);
+        $this->assertSame(5, $result->getNumber());
     }
 
 }

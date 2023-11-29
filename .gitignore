@@ -1,7 +1,7 @@
 .idea
 vendor
-src/lesson20112023
-tests/App/lesson20112023
-box
+/src/lesson20112023
+/tests/App/lesson20112023
+/box
 composer.json
 /files
