@@ -5,7 +5,7 @@ namespace App\lesson28112023\V1;
 
 abstract class Person
 {
-    private int $number;
+    private int $id;
     public function __construct(
         private string $name,
         private string $surname,
@@ -13,14 +13,14 @@ abstract class Person
     ) {
     }
 
-    public function getNumber(): int
+    public function getId(): int
     {
-        return $this->number;
+        return $this->id;
     }
 
-    public function setNumber(int $value): void
+    public function setId(int $value): void
     {
-        $this->number = $value;
+        $this->id = $value;
     }
 
     public function getName(): string

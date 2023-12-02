@@ -20,13 +20,13 @@ class Sale
         if (!\str_contains($content, $saleData)) {
             $pattern = '#([\d]+).+?$#';
 
-            $number = (\preg_match($pattern, $content, $matches)) ? (int)$matches[1] + 1 : 1;
+            $id = (\preg_match($pattern, $content, $matches)) ? (int)$matches[1] + 1 : 1;
 
-            $this->manager->setNumber($number);
-            $this->customer->setNumber($number);
+            $this->manager->setId($id);
+            $this->customer->setId($id);
 
-            $currentDate = date('d-m-Y H:i:s');
-            $data = "{$number}|{$saleData}|{$currentDate}";
+            $currentDate = \date('d-m-Y H:i:s');
+            $data = "{$id}|{$saleData}|{$currentDate}";
 
             $handle = \fopen($this->filename, 'a+');
             \fwrite($handle, $data . "\n");
@@ -37,9 +37,9 @@ class Sale
 
             \preg_match($pattern, $content, $matches);
 
-            $number = (int)$matches[0];
-            $this->manager->setNumber($number);
-            $this->customer->setNumber($number);
+            $id = (int)$matches[0];
+            $this->manager->setId($id);
+            $this->customer->setId($id);
         }
 
         return ['manager' => $this->manager, 'customer' => $this->customer];

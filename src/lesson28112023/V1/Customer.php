@@ -5,7 +5,7 @@ namespace App\lesson28112023\V1;
 
 class Customer extends Person
 {
-    private int $number;
+    private int $id;
     public function __construct(
         string $name,
         string $surname,

@@ -2,34 +2,20 @@
 
 use PHPUnit\Framework\TestCase;
 
-class DependencyFailureTest extends TestCase
-{
-    public function testOne()
-    {
-        $this->assertTrue(false);
-    }
+interface Event {}
 
-    /**
-     * @depends testOne
-     */
-    public function testTwo()
-    {}
+class Accept
+{
+    public function add(Event $event)
+    {
+        echo 'hello';
+    }
 }
 
+class B implements Event {}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+$obj = new Accept();
+$obj->add((new B));
 
 
 
