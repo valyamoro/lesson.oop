@@ -2,20 +2,12 @@
 
 use PHPUnit\Framework\TestCase;
 
-interface Event {}
+$s = 'monkey';
+$t = 'many monkyes';
 
-class Accept
-{
-    public function add(Event $event)
-    {
-        echo 'hello';
-    }
-}
+$c = printf("%s hello guys %s\n", $s, $t);
+echo $c;
 
-class B implements Event {}
-
-$obj = new Accept();
-$obj->add((new B));
 
 
 
