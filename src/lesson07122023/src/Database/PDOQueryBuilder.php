@@ -12,14 +12,14 @@ class PDOQueryBuilder implements QueryBuilder
     ) {
     }
 
-    public function prepare(string $query): QueryBuilder
+    public function prepare(string $query): PDOQueryBuilder
     {
         $this->sth = $this->dbh->prepare($query);
 
         return $this;
     }
 
-    public function execute(array $binds = []): QueryBuilder
+    public function execute(array $binds = []): PDOQueryBuilder
     {
         $this->sth->execute($binds);
 

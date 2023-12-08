@@ -6,12 +6,15 @@ namespace App\lesson07122023\src\Models;
 class Product extends Model
 {
     protected const TABLE_NAME = 'products';
-    private string $title;
-    private int $quantity;
-    private int $price;
-    private int $discount;
-    private string $created_at;
-    private string $updated_at;
+
+    public function __construct(
+//        private string $title,
+//        private int $quantity,
+//        private int $price,
+//        private int $discount
+    )
+    {
+    }
 
     public function add(string $title, int $quantity, int $price, int $discount): int
     {
@@ -20,7 +23,7 @@ class Product extends Model
 
         $now = \date('Y-m-d');
 
-        $result = self::$queryBuilder->prepare($query)->execute([
+        $result = $this->queryBuilder()->prepare($query)->execute([
             ':title' => $title,
             ':quantity' => $quantity,
             ':price' => $price,

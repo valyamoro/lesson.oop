@@ -9,9 +9,10 @@ abstract class ActiveRecord
     protected static PDOQueryBuilder $queryBuilder;
     private static PDOQueryBuilder $staticBuilder;
 
+
     public function queryBuilder(): PDOQueryBuilder
     {
-        return self::$staticBuilder;
+        return self::$queryBuilder;
     }
 
     protected static function init(): void
