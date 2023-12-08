@@ -20,7 +20,7 @@ class Product extends Model
 
         $now = \date('Y-m-d');
 
-        $result = $this->queryBuilder->prepare($query)->execute([
+        $result = self::$queryBuilder->prepare($query)->execute([
             ':title' => $title,
             ':quantity' => $quantity,
             ':price' => $price,

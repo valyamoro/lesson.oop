@@ -9,12 +9,12 @@ abstract class Model extends ActiveRecord
 {
     public function __construct()
     {
-        $this->init();
+        self::init();
     }
 
-    public function create(): Model
+    public static function create(): Model
     {
-        $this->init();
+        self::init();
 
         return new static();
     }

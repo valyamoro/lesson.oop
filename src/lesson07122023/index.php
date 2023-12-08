@@ -7,7 +7,6 @@ use App\lesson07122023\src\Models\Product;
 
 $id = 5;
 
-$model = new Product();
-$model->create();
+$model = Product::create();
 print_r($model->add('p4', 30, 350, 300));
 print_r($model->find(4));

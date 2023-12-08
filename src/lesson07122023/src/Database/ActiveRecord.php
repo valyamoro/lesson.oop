@@ -6,22 +6,22 @@ namespace App\lesson07122023\src\Database;
 abstract class ActiveRecord
 {
     protected const TABLE_NAME = '';
-    protected PDOQueryBuilder $queryBuilder;
+    protected static PDOQueryBuilder $queryBuilder;
     private static PDOQueryBuilder $staticBuilder;
 
     public function queryBuilder(): PDOQueryBuilder
     {
-        return $this->queryBuilder;
+        return self::$staticBuilder;
     }
 
-    protected function init(): void
+    protected static function init(): void
     {
         $data = require __DIR__ . '/../../config/db.php';
 
         $database = new PDODriver(...$data['pdo']);
 
         $queryBuilder = new PDOQueryBuilder($database->init());
-        $this->queryBuilder = $queryBuilder;
+        self::$queryBuilder = $queryBuilder;
         static::$staticBuilder = $queryBuilder;
     }
 
