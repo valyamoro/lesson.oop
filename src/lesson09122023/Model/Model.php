@@ -17,20 +17,20 @@ class Model
 
     public function insert(array $data): int
     {
-        $placeHolders = str_repeat('?, ', \count($data) - 1) . '?';
+        $placeHolders = \str_repeat('?, ', \count($data) - 1) . '?';
 
-        $query = 'insert into ' . static::TABLE_NAME . '( ' . implode(', ', array_keys($data)) . ') values (' . $placeHolders . ')';
+        $query = 'insert into ' . static::TABLE_NAME . '( ' . \implode(', ', \array_keys($data)) . ') values (' . $placeHolders . ')';
 
-        $this->builder->prepare($query)->execute(array_values($data));
+        $this->builder->prepare($query)->execute(\array_values($data));
 
         return $this->builder->lastInsertId();
     }
 
     public function update(array $data): bool
     {
-        $setClause = implode(', ', array_map(function($key) {
+        $setClause = \implode(', ', \array_map(function($key) {
             return "$key = :$key";
-        }, array_keys($data)));
+        }, \array_keys($data)));
 
         $query = 'UPDATE ' . static::TABLE_NAME . ' SET ' . $setClause . ' WHERE id = :id LIMIT 1';
 
