@@ -19,4 +19,10 @@ abstract class Model extends ActiveRecord
         return new static();
     }
 
+    abstract public function add(array $data): int;
+
+    abstract public function delete(int $id): bool;
+
+    abstract public function update(array $data, int $id): int;
+
 }

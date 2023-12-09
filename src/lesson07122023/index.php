@@ -8,5 +8,8 @@ use App\lesson07122023\src\Models\Product;
 $id = 5;
 
 $model = Product::create();
-print_r($model->add('p4', 30, 350, 300));
+$product = [
+
+];
+print_r($model->add($product));
 print_r($model->find(4));

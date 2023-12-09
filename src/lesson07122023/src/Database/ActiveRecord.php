@@ -32,4 +32,15 @@ abstract class ActiveRecord
         return $result;
     }
 
+    public static function quoteData(array $data): array
+    {
+        $quoteData = [];
+
+        foreach ($data as $key => $value) {
+            $quoteData[$key] = htmlspecialchars(strip_tags(trim($value)));
+        }
+
+        return $quoteData;
+    }
+
 }
