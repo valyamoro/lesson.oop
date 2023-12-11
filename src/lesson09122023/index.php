@@ -16,13 +16,41 @@ $pdoDriver = new PDODriver($databasePDOConnection->connection());
 $model = User::create($pdoDriver);
 
 $data = [
-    'id' => '10',
     'name' => '1',
     'email' => 'Ivan2@mail.ru',
     'phone' => '72900809080',
     'password'  =>'12345j',
 ];
 
-$data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-$result = $model->update($data);
+$result = $model->getAll();
 var_dump($result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

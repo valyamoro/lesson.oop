@@ -25,4 +25,13 @@ class Product extends Model
         return $result;
     }
 
+    public function delete(int $id): bool
+    {
+        // TODO: Implement delete() method.
+    }
+
+    public function update(array $data, int $id): int
+    {
+        // TODO: Implement update() method.
+    }
 }

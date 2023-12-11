@@ -1,13 +1,37 @@
 <?php
+declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
 
-$s = 'monkey';
-$t = 'many monkyes';
+class StackTest extends TestCase
+{
+    protected array $stack;
 
-$c = printf("%s hello guys %s\n", $s, $t);
-echo $c;
+    protected function setUp(): void
+    {
+        $this->stack = [];
+    }
 
+    public function testEmpty(): void
+    {
+        $this->assertTrue(empty($this->stack));
+    }
+
+    public function testPush(): void
+    {
+        array_push($this->stack, 'foo');
+        $this->assertSame('foo', $this->stack[count($this->stack) - 1]);
+        $this->assertFalse(empty($this->stack));
+    }
+
+    public function testPop(): void
+    {
+        array_push($this->stack, 'foo');
+        $this->assertSame('foo', array_pop($this->stack));
+        $this->assertTrue(empty($this->stack));
+    }
+
+}
 
 
 

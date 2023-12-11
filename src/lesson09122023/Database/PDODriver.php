@@ -28,7 +28,7 @@ class PDODriver
     public function fetch(): array
     {
         $result = $this->sth->fetch();
-        $this->sth = null; // почему тут null.
+        $this->sth = null;
 
         return $result;
     }

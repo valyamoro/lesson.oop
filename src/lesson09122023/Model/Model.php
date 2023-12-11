@@ -29,7 +29,7 @@ class Model
     public function update(array $data): bool
     {
         $setClause = \implode(', ', \array_map(function($key) {
-            return "$key = :$key";
+            return "{$key} = :{$key}";
         }, \array_keys($data)));
 
         $query = 'UPDATE ' . static::TABLE_NAME . ' SET ' . $setClause . ' WHERE id = :id LIMIT 1';
@@ -50,6 +50,15 @@ class Model
         $result = $this->builder->rowCount();
 
         return (bool)$result;
+    }
+
+    public function getAll(): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE_NAME;
+
+        $result = $this->builder->prepare($query)->execute()->fetchAll();
+
+        return $result;
     }
 
 }
