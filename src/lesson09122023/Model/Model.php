@@ -3,16 +3,25 @@ declare(strict_types=1);
 
 namespace App\lesson09122023\Model;
 
+use App\lesson09122023\Database\DatabaseConfiguration;
+use App\lesson09122023\Database\DatabaseConnection;
+use App\lesson09122023\Database\MySQLIDriver;
 use App\lesson09122023\Database\PDODriver;
 
 class Model
 {
     const TABLE_NAME = '';
-    public function __construct(private PDODriver $builder) {}
+    public function __construct(
+        protected $builder,
+    ) {}
 
-    public static function create($builder): Model
+    public static function create($builderArg, $sec): Model
     {
-        return new static($builder);
+        if (!is_null($builderArg)) {
+            return new static($builderArg);
+        } else {
+            return new static($sec);
+        }
     }
 
     public function insert(array $data): int
