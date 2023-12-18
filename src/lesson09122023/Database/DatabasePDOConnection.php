@@ -7,7 +7,9 @@ class DatabasePDOConnection implements DatabaseConnection
 {
     public function __construct(
         private DatabaseConfiguration $configuration,
-    ) {}
+    ) {
+
+    }
 
     public function connection(): \PDO
     {

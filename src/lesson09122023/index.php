@@ -17,13 +17,15 @@ $model = User::create($pdoDriver);
 
 $data = [
     'name' => '1',
-    'email' => 'Ivan2@mail.ru',
-    'phone' => '72900809080',
-    'password'  =>'12345j',
+    'email' => 'Ivan2www@mail.ru',
+    'phone' => '11172900809080',
+    'password'  =>'aaw12345qqwj',
 ];
+$id = 93;
 
-$result = $model->getAll();
-var_dump($result);
+$result = $model->update($data, $id);
+//$result = $model->getAll();
+print_r($result);
 
 
 
